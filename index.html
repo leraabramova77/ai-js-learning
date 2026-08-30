@@ -2,17 +2,50 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Моя нейронка</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
+
     <div class="box">
+
         <h2>Мой помощник</h2>
-        <textarea id="question" placeholder="Введите ваш вопрос"></textarea>
-        <button onclick="sendQuestion()">Отправить запрос</button>
-        <div id="answer">Здесь появится ответ...</div>
+
+        <!-- Область чата -->
+        <div class="chat-wrapper">//
+
+            <div id="chat">
+
+                <div class="message assistant">
+                    <div class="message-name">ИИ</div>
+                    <div class="message-text">
+                        Привет! Задай мне вопрос 😊
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Плавающие стрелки -->
+            <button class="scroll-btn top-btn" id="scrollTop">↑</button>
+            <button class="scroll-btn bottom-btn" id="scrollBottom">↓</button>
+
+        </div>
+
+        <!-- Ввод -->
+        <textarea
+            id="question"
+            placeholder="Введите ваш вопрос..."
+        ></textarea>
+
+        <button id="sendButton" onclick="sendQuestion()">
+            Отправить
+        </button>
+
     </div>
+
     <script src="scripts/ai-request.js"></script>
+
 </body>
 </html>
-

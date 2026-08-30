@@ -1,51 +1,161 @@
-        body {
-            font-family: Arial, sans-serif;
-         max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #ffffff;
-        }
-                .box {
-            background: rgb(156, 238, 135);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                display: flex;
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.box {
+    background: rgb(156, 238, 135);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
     flex-direction: column;
-        }
-                button {
-            
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-                button {
-            background: #4CAF50;
-            color: white;
-            border: none;
-          cursor: pointer;
-        }
-                button:hover {
-            background: #367c39;
-        }
-                #answer {
-            margin-top: 20px;
-            padding: 15px;
-            background: #93f59b;
-            border-radius: 5px;
-            min-height: 50px;
-        }
-                .loading {
-            color: #666;
-        }
-        
-         textarea {
-            display: block;
-            height: 100px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+}
+
+h2 {
+    margin-top: 0;
+}
+
+/* Обёртка чата */
+.chat-wrapper {
+    position: relative;
+}
+
+/* Сам чат */
+#chat {
+    height: 500px;
+    overflow-y: auto;
+
+    padding: 15px;
+
+    background: #ffffff;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    scroll-behavior: smooth;
+}
+
+/* Сообщение */
+.message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/* Сообщение пользователя */
+.message.user {
+    align-self: flex-end;
+    background: #d7ffd1;
+}
+
+/* Сообщение ИИ */
+.message.assistant {
+    align-self: flex-start;
+    background: #eeeeee;
+}
+
+/* Имя */
+.message-name {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Текст */
+.message-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Поле ввода */
+textarea {
+    display: block;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    height: 100px;
+
+    padding: 10px;
+
+    margin-top: 15px;
+
+    font-size: 16px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    resize: vertical;
+}
+
+/* Кнопка отправки */
+#sendButton {
+    padding: 10px;
+
+    margin-top: 10px;
+
+    font-size: 16px;
+
+    background: #4CAF50;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+#sendButton:hover {
+    background: #367c39;
+}
+
+/* Плавающие стрелки */
+.scroll-btn {
+    position: absolute;
+
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(76, 175, 80, 0.9);
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+    display: none;
+
+    z-index: 10;
+}
+
+/* Стрелка вверх */
+.top-btn {
+    top: 15px;
+}
+
+/* Стрелка вниз */
+.bottom-btn {
+    bottom: 15px;
+}
+
+/* Наведение */
+.scroll-btn:hover {
+    background: #367c39;
+}
